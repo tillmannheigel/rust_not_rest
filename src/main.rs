@@ -15,9 +15,9 @@ fn main() {
     match io::stdin().read_line(&mut input) {
         Ok(..) => {
             println!("{}", input);
-            if input.contains("1") {
+            if input.trim() == "1" {
                 guess::play();
-            } else if input.contains("2") {
+            } else if input.trim() == "2" {
                 type_writer::play()
             }
         }
