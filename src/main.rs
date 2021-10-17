@@ -1,28 +1,19 @@
 use std::io;
-use rand::Rng;
-use std::cmp::Ordering;
+
+mod guess;
 
 fn main() {
-    println!("Guess a number!");
+    println!("What game do you want to play?");
+    println!("1 - Guessing Game");
 
-    let generated_number = rand::thread_rng().gen_range(1..101);
-
-    loop {
-        let mut guess = String::new();
-        io::stdin()
-            .read_line(&mut guess)
-            .expect("Failed to read line");
-        let guess: i32 = guess.trim().parse().expect("Expect a number!");
-
-        match guess.cmp(&generated_number) {
-            Ordering::Less => println!("too small!"),
-            Ordering::Equal => {
-                println!("YES, you found it!");
-                break;
-            },
-            Ordering::Greater => println!("too big!")
+    let mut input = String::new();
+    match io::stdin().read_line(&mut input) {
+        Ok(..) => {
+            println!("{}", input);
+            if input.eq("1") {
+                guess::play();
+            }
         }
-
-        println!("You guessed: {}", guess);
+        Err(error) => println!("error: {}", error),
     }
 }
