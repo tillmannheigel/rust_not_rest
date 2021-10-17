@@ -30,21 +30,21 @@ impl<T> AnyExt for T {
 fn random_character() {
     let my_variable = 'd';
     println!("{}",my_variable);
-    expectInput(my_variable.type_name())
+    expect_input(my_variable.type_name())
 }
 
 fn random_double() {
     let my_variable = 3.1415;
     println!("{}", my_variable);
-    expectInput(my_variable.type_name())
+    expect_input(my_variable.type_name())
 }
 
 fn random_integer() {
     let my_variable = 5;
     println!("{}", my_variable);
-    expectInput(my_variable.type_name())}
+    expect_input(my_variable.type_name())}
 
-fn expectInput(variable: &'static str) {
+fn expect_input(variable: &'static str) {
     let mut input = String::new();
     match io::stdin().read_line(&mut input) {
         Ok(..) => {
