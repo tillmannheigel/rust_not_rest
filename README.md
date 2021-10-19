@@ -1,6 +1,6 @@
 # Rust not rest
 
-There is a german saying, if "you rust if you rest". To not rest and therefore rust, this is a apprentice piece for understanding a little bit more about Rust. 
+There is a german saying, if "you rest you will rust". To not rest and therefore rust, this is a apprentice piece for understanding a little bit more about Rust. 
 
 Now to some more Rust Language related topics...
 
